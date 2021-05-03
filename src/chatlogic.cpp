@@ -32,7 +32,7 @@ ChatLogic::~ChatLogic()
     ////
 
     // delete chatbot instance
-    delete _chatBot;
+    //delete _chatBot;
 
     // delete all nodes
     //Smart pointer _nodes will be automatically deleted when get out of scope
