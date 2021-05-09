@@ -9,13 +9,8 @@ GraphNode::GraphNode(int id)
 
 GraphNode::~GraphNode()
 {
-    //// STUDENT CODE
-    ////
-
+    // Task 0: The chatbot was being deleted twice
     //delete _chatBot; 
-
-    ////
-    //// EOF STUDENT CODE
 }
 
 void GraphNode::AddToken(std::string token)
@@ -28,13 +23,13 @@ void GraphNode::AddEdgeToParentNode(GraphEdge *edge)
     _parentEdges.push_back(edge);
 }
 
+//Task 4: Use of move semantics to change unique pointer ownership
 void GraphNode::AddEdgeToChildNode(std::unique_ptr<GraphEdge> edge)
 {
     _childEdges.push_back(std::move(edge));
 }
 
-//// STUDENT CODE
-////
+// Task 5: Use move semantics to pass chatBot instances
 void GraphNode::MoveChatbotHere(ChatBot chatbot)
 {
     _chatBot = std::move(chatbot);
@@ -45,16 +40,11 @@ void GraphNode::MoveChatbotToNewNode(GraphNode *newNode)
 {
     newNode->MoveChatbotHere(std::move(_chatBot));
 }
-////
-//// EOF STUDENT CODE
+
+
 
 GraphEdge *GraphNode::GetChildEdgeAtIndex(int index)
 {
-    //// STUDENT CODE
-    ////
-
+    //Task 4: Get raw pointer of unique pointer
     return _childEdges[index].get();
-
-    ////
-    //// EOF STUDENT CODE
 }

@@ -2,6 +2,7 @@
 #define CHATGUI_H_
 
 #include <wx/wx.h>
+// Add memory library to use smartpoiters
 #include <memory>
 
 class ChatLogic; // forward declaration
@@ -13,14 +14,8 @@ private:
     // control elements
     wxBoxSizer *_dialogSizer;
     wxBitmap _image;
-
-    //// STUDENT CODE
-    ////
+// Task 1: Replace _chatLogic pointer with a smart pointer
     std::unique_ptr<ChatLogic> _chatLogic;
-    //ChatLogic *_chatLogic;
-
-    ////
-    //// EOF STUDENT CODE
 
 public:
     // constructor / destructor
@@ -28,7 +23,7 @@ public:
     ~ChatBotPanelDialog();
 
     // getter / setter
-    //Retrieve raw pointer
+    //Task 1: Retrieve raw pointer of the new smart pointer _chatLogic
     ChatLogic *GetChatLogicHandle() { return _chatLogic.get(); }
 
     // events

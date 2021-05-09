@@ -41,7 +41,7 @@ ChatBot::~ChatBot()
         _image = NULL;
     }
 }
-
+//Task 2: Rule of five
 //Copy constructor
 ChatBot::ChatBot(const ChatBot &source)
 {

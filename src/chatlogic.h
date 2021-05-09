@@ -15,7 +15,7 @@ class ChatLogic
 private:
 
     // data handles (owned)
-    // TASK 3 
+    // TASK 3: Use of unique_pointers instead of raw pointer in vector _nodes
     std::vector<std::unique_ptr<GraphNode>> _nodes;
     std::vector<std::unique_ptr<GraphEdge>> _edges;
 

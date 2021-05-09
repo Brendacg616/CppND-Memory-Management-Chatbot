@@ -13,18 +13,13 @@ class GraphEdge;
 class GraphNode
 {
 private:
-    //// STUDENT CODE
-    ////
-
     // data handles (owned)
+    //Task 4: Use unique pointer instead of raw pointer;
     std::vector<std::unique_ptr<GraphEdge>> _childEdges;  // edges to subsequent nodes
 
     // data handles (not owned)
     std::vector<GraphEdge *> _parentEdges; // edges to preceding nodes 
     ChatBot _chatBot;
-
-    ////
-    //// EOF STUDENT CODE
 
     // proprietary members
     int _id;
@@ -45,6 +40,7 @@ public:
     // proprietary functions
     void AddToken(std::string token); // add answers to list
     void AddEdgeToParentNode(GraphEdge *edge);
+    //Task 4: Use unique pointer instead of raw pointer
     void AddEdgeToChildNode(std::unique_ptr<GraphEdge> edge);
 
     //// STUDENT CODE
